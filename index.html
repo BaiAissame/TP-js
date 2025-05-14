@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Culture Générale</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <!-- Écran d'accueil -->
+            <div id="welcomeScreen" class="welcome-screen">
+                <h1><i class="fas fa-brain"></i> Quiz de Culture Générale</h1>
+                <p class="lead">Testez vos connaissances générales avec ce quiz interactif !</p>
+                <p>Vous devrez répondre à <span id="totalQuestions"></span> questions.</p>
+                <button id="startQuizBtn" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play"></i> Commencer le quiz
+                </button>
+            </div>
+
+            <!-- Interface du quiz -->
+            <div id="quizScreen" class="hidden">
+                <!-- Barre de progression -->
+                <div class="mb-4">
+                    <div class="progress">
+                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <small class="text-muted">
+                        Question <span id="currentQuestion">1</span> sur <span id="totalQuestionsDisplay"></span>
+                    </small>
+                </div>
+
+                <!-- Question et réponses -->
+                <div class="question-container">
+                    <h3 id="questionText" class="mb-4"></h3>
+                    <div id="answersContainer"></div>
+                </div>
+
+                <!-- Boutons de navigation -->
+                <div class="d-flex justify-content-between mt-4">
+                    <button id="prevBtn" class="btn btn-outline-secondary btn-quiz hidden">
+                        <i class="fas fa-arrow-left"></i> Précédent
+                    </button>
+                    <div>
+                        <button id="nextBtn" class="btn btn-primary btn-quiz">
+                            Suivant <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button id="submitBtn" class="btn btn-success btn-quiz hidden">
+                            <i class="fas fa-check"></i> Valider
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Écran des résultats -->
+            <div id="resultScreen" class="hidden">
+                <div class="score-display">
+                    <h2>Quiz terminé !</h2>
+                    <div id="scoreCircle" class="score-circle"></div>
+                    <h3>Votre score : <span id="finalScore"></span></h3>
+                    <p id="scoreMessage" class="lead"></p>
+                    
+                    <!-- Résumé des réponses -->
+                    <div id="answerSummary" class="mt-4 text-start">
+                        <h4>Résumé de vos réponses :</h4>
+                        <div id="summaryContent"></div>
+                    </div>
+
+                    <button id="restartBtn" class="btn btn-primary btn-lg mt-4">
+                        <i class="fas fa-redo"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
